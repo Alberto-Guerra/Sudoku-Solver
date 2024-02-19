@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "vyH4wA9QY8yA6m8NV2D7XX86ae/u9BGnxda8DDHqdaYFlIx6faJ6g/e08M2H7hy2je+Y726XBYmtp4RPTGUQcg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ardil\\Documents\\GitHub\\Sudoku-Solver\\Sudoku-Solver\\API\\SodukoSolver\\SodukoSolver.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ardil\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\ardil\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ardil\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\ardil\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\ardil\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\ardil\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

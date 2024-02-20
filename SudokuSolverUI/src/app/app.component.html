@@ -1,28 +1,68 @@
-<div class="min-h-screen flex flex-col justify-center items-center gap-5 border">
-<h1 class="text-4xl text-center font-bold">Sudoku Solver</h1>
-<div class="flex flex-col justify-center items-center">
-  <div class="flex flex-row max-w-4xl " *ngFor="let row of sudokuGrid; let rowIndex = index">
-      <input *ngFor="let cell of row; let cellIndex = index" type="number" [value]="getSudokuValue(rowIndex,cellIndex)" class="p-2 w-16 text-center border border-black ">
+<div
+  class="min-h-screen flex flex-row justify-center items-center gap-24 border"
+>
+  <form class="flex flex-col gap-5" (ngSubmit)="update(sudokuInput)">
+    <textarea
+      class="p-2 w-48 h-64 text-center border border-black"
+      placeholder="Paste Sudoku in JSON format"
+      [(ngModel)]="sudokuInput"
+      name="sudokuInput"
+    ></textarea>
+    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+      Update
+    </button>
+  </form>
+<div class="min-h-screen flex flex-col justify-center items-center gap-5">
+ 
+  
+
+  <h1 class="text-4xl text-center font-bold">Sudoku Solver</h1>
+  <div class="flex flex-col justify-center items-center">
+    <div
+      class="flex flex-row max-w-4xl"
+      *ngFor="let row of sudokuGrid; let rowIndex = index"
+    >
+      <input
+        *ngFor="let cell of row; let cellIndex = index"
+        type="number"
+        class="p-2 w-16 text-center border border-black"
+        [value]="
+          sudokuGrid[rowIndex][cellIndex] == 0
+            ? ' '
+            : sudokuGrid[rowIndex][cellIndex]
+        "
+        
+        [ngClass]="{
+          '
+      font-bold text-red-700': isOriginal(rowIndex, cellIndex),
+          'border-r-2 ': (cellIndex + 1) % 3 === 0 && (cellIndex + 1) % 9 !== 0,
+          'border-b-2 ': (rowIndex + 1) % 3 === 0 && (rowIndex + 1) % 9 !== 0
+        }"
+      />
+    </div>
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
+      (click)="solveSudoku()"
+    >
+      Solve Sudoku
+    </button>
+    <button
+      class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-5"
+      (click)="clean()"
+    >
+      CLEAN
+    </button>
   </div>
-  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5" (click)="solveSudoku()">Solve Sudoku</button>
 </div>
-</div>
-
-
-
-
-
-
-
 
 <style>
   input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
+  }
 
-input[type="number"] {
+  input[type="number"] {
     -moz-appearance: textfield;
-}
+  }
 </style>

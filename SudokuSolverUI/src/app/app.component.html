@@ -26,12 +26,7 @@
         *ngFor="let cell of row; let cellIndex = index"
         type="number"
         class="p-2 w-16 text-center border border-black"
-        [value]="
-          sudokuGrid[rowIndex][cellIndex] == 0
-            ? ' '
-            : sudokuGrid[rowIndex][cellIndex]
-        "
-        
+        [(ngModel)]="sudokuGrid[rowIndex][cellIndex]"
         [ngClass]="{
           '
       font-bold text-red-700': isOriginal(rowIndex, cellIndex),
